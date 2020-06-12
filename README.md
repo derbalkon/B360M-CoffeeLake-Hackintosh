@@ -10,6 +10,10 @@ An EFI configuration file is usually not enough to make things clear, so I creat
 
 > **Please Note**: Hackintosh building is a process that requires proper debugging skills, sometimes depending on specific hardware with a little bit of luck. Decent OS running experience can only be guaranteed with specifications very much the same as mine if you decide to use this configuration. Do not take it as a textbook standard.
 
+## Limitations
+
+This configuration may only suitable for those who have both iGPU (computing only) and dGPU. If you are using specs that have only iGPU or only dGPU, I suggest not using this configuration because you may want to change model from iMac19,1 to other models. Otherwise you would experience blackscreen or magenta screen or some other undefined problems.
+
 ## Hardware List
 
 |         Specs | Details                                            |
