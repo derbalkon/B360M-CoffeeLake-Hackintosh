@@ -8,11 +8,11 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Enable RTC disable AWAC</string>
+				<string>Enable RTC and disable AWAC</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-RTC_Y-AWAC_N.aml</string>
+				<string>SSDT-AWAC.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -37,6 +37,22 @@
 				<true/>
 				<key>Path</key>
 				<string>SSDT-EC-USBX.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Fix AppleSMBus support</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-SBUS-MCHC.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Add MEM2 and DMA controller</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-MEM2-DMAC.aml</string>
 			</dict>
 		</array>
 		<key>Delete</key>
@@ -72,11 +88,11 @@
 			<key>DisableVariableWrite</key>
 			<false/>
 			<key>DiscardHibernateMap</key>
-			<false/>
+			<true/>
 			<key>EnableSafeModeSlide</key>
 			<true/>
 			<key>EnableWriteUnprotector</key>
-			<true/>
+			<false/>
 			<key>ForceExitBootServices</key>
 			<false/>
 			<key>ProtectMemoryRegions</key>
@@ -87,6 +103,8 @@
 			<false/>
 			<key>ProvideCustomSlide</key>
 			<true/>
+			<key>ProvideMaxSlide</key>
+			<integer>0</integer>
 			<key>RebuildAppleMemoryMap</key>
 			<true/>
 			<key>SetupVirtualMap</key>
@@ -104,12 +122,19 @@
 			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
 				<key>layout-id</key>
-				<data>XAAAAA==</data>
+				<integer>92</integer>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>AwCYPg==</data>
+				<data>AwCRPg==</data>
+				<key>igfxfw</key>
+				<data>AgAAAA==</data>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>shikigva</key>
+				<integer>80</integer>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -233,22 +258,6 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>NVMeFix.kext</string>
-				<key>Comment</key>
-				<string>Fix random kernel panic after wake</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/NVMeFix</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
 				<string>USBPorts.kext</string>
 				<key>Comment</key>
 				<string>Custom USB ports for iMac19,1</string>
@@ -265,13 +274,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>USBPower.kext</string>
+				<string>NVMeFix.kext</string>
 				<key>Comment</key>
-				<string>Apple quick charge for iMac19,1</string>
+				<string>Fix random kernel panic after wake</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
-				<string></string>
+				<string>Contents/MacOS/NVMeFix</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -281,29 +290,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>CPUFriend.kext</string>
+				<string>AirportBrcmFixup.kext</string>
 				<key>Comment</key>
-				<string>CPU frequency correction for i5-9400</string>
+				<string>Fix Wi-Fi lagging after wake</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/CPUFriend</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>CPUFriendDataProvider.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string></string>
+				<string>Contents/MacOS/AirportBrcmFixup</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -425,6 +418,8 @@
 			<integer>0</integer>
 			<key>DisplayLevel</key>
 			<integer>2147483650</integer>
+			<key>SerialInit</key>
+			<false/>
 			<key>SysReport</key>
 			<false/>
 			<key>Target</key>
@@ -440,8 +435,6 @@
 			<true/>
 			<key>AuthRestart</key>
 			<false/>
-			<key>BlacklistAppleUpdate</key>
-			<true/>
 			<key>BootProtect</key>
 			<string>None</string>
 			<key>ExposeSensitiveData</key>
@@ -454,7 +447,22 @@
 			<string>Optional</string>
 		</dict>
 		<key>Tools</key>
-		<array/>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<string>Firmware</string>
+				<key>Auxiliary</key>
+				<true/>
+				<key>Comment</key>
+				<string>Enter BIOS firmware settings</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Name</key>
+				<string>BIOS Settings</string>
+				<key>Path</key>
+				<string>ResetSystem.efi</string>
+			</dict>
+		</array>
 	</dict>
 	<key>NVRAM</key>
 	<dict>
@@ -477,11 +485,13 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>igfxfw=2 shikigva=80</string>
+				<string></string>
+				<key>run-efi-updater</key>
+				<string>No</string>
 				<key>csr-active-config</key>
-				<data>5wMAAA==</data>
+				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
-				<data>emgtSGFuczoyNTI=</data>
+				<string>zh-Hans:252</string>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -498,6 +508,7 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<array>
 				<string>boot-args</string>
+				<string>csr-active-config</string>
 			</array>
 		</dict>
 		<key>LegacyEnable</key>
@@ -505,34 +516,9 @@
 		<key>LegacyOverwrite</key>
 		<false/>
 		<key>LegacySchema</key>
-		<dict>
-			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
-			<array>
-				<string>EFILoginHiDPI</string>
-				<string>EFIBluetoothDelay</string>
-				<string>LocationServicesEnabled</string>
-				<string>SystemAudioVolume</string>
-				<string>SystemAudioVolumeDB</string>
-				<string>SystemAudioVolumeSaved</string>
-				<string>bluetoothActiveControllerInfo</string>
-				<string>bluetoothInternalControllerInfo</string>
-				<string>flagstate</string>
-				<string>fmm-computer-name</string>
-				<string>prev-lang:kbd</string>
-				<string>efi-boot-device</string>
-				<string>efi-boot-device-data</string>
-			</array>
-			<key>8BE4DF61-93CA-11D2-AA0D-00E098032B8C</key>
-			<array>
-				<string>Boot0080</string>
-				<string>Boot0081</string>
-				<string>Boot0082</string>
-				<string>BootNext</string>
-				<string>BootOrder</string>
-			</array>
-		</dict>
+		<dict/>
 		<key>WriteFlash</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>PlatformInfo</key>
 	<dict>
@@ -570,6 +556,8 @@
 		<dict>
 			<key>EnableJumpstart</key>
 			<true/>
+			<key>GlobalConnect</key>
+			<false/>
 			<key>HideVerbose</key>
 			<true/>
 			<key>JumpstartHotPlug</key>
@@ -648,6 +636,8 @@
 			<false/>
 			<key>TextRenderer</key>
 			<string>BuiltinGraphics</string>
+			<key>UgaPassThrough</key>
+			<false/>
 		</dict>
 		<key>ProtocolOverrides</key>
 		<dict>
@@ -658,6 +648,8 @@
 			<key>AppleDebugLog</key>
 			<false/>
 			<key>AppleEvent</key>
+			<false/>
+			<key>AppleFramebufferInfo</key>
 			<false/>
 			<key>AppleImageConversion</key>
 			<false/>
