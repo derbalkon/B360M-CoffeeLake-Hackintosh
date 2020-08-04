@@ -31,9 +31,22 @@ This configuration may only suitable for those who have **both** iGPU (computing
 
 ## Changelog
 
+### 08/04/2020
+
+- Updated OpenCore to v0.6.0
+- Optimized ACPI hotpatches: `SSDT-EC-USBX`, `SSDT-AWAC`, `SSDT-PLUG`, `SSDT-PMCR`
+- Added new ACPI hotpatches for final touch: `SSDT-MEM2-DMAC`, `SSDT-SBUS-MCHC`
+- Updated `Lilu.kext` and her friends
+- Deleted `CPUFriend.kext` as i5-9400 does not necessarily need this
+- Added `AirportBrcmFixup.kext` to fix Wi-Fi lagging after sleeping
+- Added an icon for `ResetSystem.efi`
+- Changed some `<data>` field in config to `<number>` and `<string>` to avoid being eaten by Xcode 11
+- Added `Firmware` mode to ResetSystem to reboot into BIOS settings
+- Moved `shikigva` and `igfxfw` from `boot-arg` into `DeviceProperties`
+
 ### 06/04/2020
 
-Initiate repository.
+- Initiate repository
 
 ## Credit
 
