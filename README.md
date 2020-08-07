@@ -4,7 +4,7 @@
 
 # MSI B360M Hackintosh Build & Changelog
 
-with macOS Catalina 10.15.5 (19F101) inside
+with macOS Catalina 10.15.6 (19G73) inside
 
 An EFI configuration file is usually not enough to make things clear, so I created a Wiki to elaborate on the problems I encountered while building Hackintosh and some of their solutions. Please read [this Wiki](https://github.com/derbalkon/B360M-CoffeeLake-Hackintosh/wiki/Special-Notes) over before using.
 
