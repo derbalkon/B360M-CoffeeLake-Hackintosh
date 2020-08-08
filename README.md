@@ -73,13 +73,13 @@ Hackintosh building is a process that requires proper debugging skills, sometime
 
 ## Configuration Explain
 
-Things may vary per device and you may want to customize it, which I will *mark in italic*. Let's review from the folder level:
+Things may vary per device and you may want to customize it, which I will ***mark in italic***. Let's review from the folder level:
 
 ### ACPI
 
 - `SSDT-AWAC`: Re-enable the old RTC clock that is compatible with macOS.
 - `SSDT-EC-USBX`: Fix desktop EC and USB port quick charge for iDevices.
-- `SSDT-PLUG`: Allow the kernel's XCPM(XNU's CPU Power Management) to manage our CPU's power management.
+- `SSDT-PLUG`: Allow the kernel's XCPM (XNU's CPU Power Management) to manage our CPU's power management.
 - `SSDT-PMCR`: Fix NVRAM support for 300 series motherboard.
 - *`SSDT-SBUS-MCHC`: Not needed. Fix AppleSMBus support.*
 - *`SSDT-MEM2-DMAC`: Not needed. Just to fill out missing part.*
