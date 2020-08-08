@@ -102,8 +102,27 @@ Things may vary per device and you may want to customize it, which I will *mark 
 - `IntelMausi`: Intel Ethernet LAN driver for macOS.
 - `NVMeFix`: Fix random kernel panic after wake caused by NVMe device.
 - `AirportBrcmFixup`: Fix Wi-Fi lagging after wake.
-- *`USBPorts`: Custom USB ports mapping for iMac19,1. Ports mapping may vary per device.*
-
+- *`USBPorts`: Custom USB ports mapping for iMac19,1. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:*
+  
+  <details><summary><i>Details</i></summary>
+  
+    ```zsh
+    01. HS01 - Internal - BRCM20702 Hub
+    02. HS03 - Internal - USB Keyboard
+    03. HS04 - USB 2 - Back USB 2
+    04. HS05 - USB 3 - Back USB 3 (SS01)
+    05. HS07 - USB 2 - Back USB 2
+    06. HS08 - USB 2 - Back USB 2
+    07. HS09 - USB 3 - Front USB 3 (SS05)
+    08. HS10 - USB 3 - Front USB 3 (SS06)
+    09. SS01 - Type 3 - Back USB 3
+    10. SS02 - TypeC+Sw - Back Type C
+    11. SS05 - USB 3 - Front USB 3
+    12. SS06 - USB 3 - Front USB 3
+    ```
+  
+  </details>
+  
 ### Resources
 
 - Here put OpenCanopy resources.
