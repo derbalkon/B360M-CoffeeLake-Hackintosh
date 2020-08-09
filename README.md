@@ -36,11 +36,11 @@ Hackintosh building is a process that requires proper debugging skills, sometime
   - <details><summary>Advanced</summary>
 
       - PCI Subsystem Settings
-        - Above 4G memory / Crypto Currency mining [**Enabled**]
+        - Above 4G Memory / Crypto Currency Mining [**Enabled**]
       - Integrated Graphics Configuration
         - Initiate Graphic Adapter [**PEG**]
         - Integrated Graphics Share Memory [**64M**]
-        - IGD Multi-Monitor [**Eanbled**]
+        - IGD Multi-Monitor [**Enabled**]
       - USB Configuration
         - XHCI Hand-off [**Enabled**]
         - Legacy USB Support [**Enabled**]
@@ -73,7 +73,7 @@ Hackintosh building is a process that requires proper debugging skills, sometime
 
 ## Configuration Explain
 
-Things may vary per device and you may want to customize it, which I will ***mark in italic***. Let's review from the folder level:
+Things may vary per device and you may want to customize it, which I will ***mark in italic***. Let's take a look from the folder level:
 
 ### ACPI
 
