@@ -4,7 +4,7 @@
 
 # MSI B360M Hackintosh Build & Changelog
 
-working well with macOS Catalina 10.15.6 (19G73)
+working well with macOS Catalina 10.15.6 (19G2021)
 
 > **Please Note**: This is not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
 
