@@ -73,7 +73,7 @@ Hackintosh building is a process that requires proper debugging skills, sometime
 
 ## Configuration Explain
 
-Things may vary per device and you may want to customize it, which I will ***mark in italic***. Let's take a look from the folder level:
+Things may vary per device and you may want to customize it, which I will **mark with * at the beginning**. Let's take a look from the folder level:
 
 ### ACPI
 
@@ -81,15 +81,15 @@ Things may vary per device and you may want to customize it, which I will ***mar
 - `SSDT-EC-USBX`: Fix desktop EC and USB port quick charge for iDevices.
 - `SSDT-PLUG`: Allow the kernel's XCPM (XNU's CPU Power Management) to manage our CPU's power management.
 - `SSDT-PMCR`: Fix NVRAM support for 300 series motherboard.
-- *`SSDT-SBUS-MCHC`: Not needed. Fix AppleSMBus support.*
-- *`SSDT-MEM2-DMAC`: Not needed. Just to fill out missing part.*
+- *`SSDT-SBUS-MCHC`: Not needed. Fix AppleSMBus support.
+- *`SSDT-MEM2-DMAC`: Not needed. Just to fill out missing part.
 
 ### Drivers
 
 - `OpenRuntime.efi`: Work with `Booter` quirks in config.plist.
 - `HfsPlus.efi`: Support HFS+ File System which is used by Recovery and Time Machine.
 - `OpenCanopy.efi`: Bring GUI for OpenCore.
-- *`ExFatDxe.efi`: Not needed. I put it here because of the exFAT formatted HDD that I have.*
+- *`ExFatDxe.efi`: Not needed. I put it here because of the exFAT formatted HDD that I have.
 
 ### Kexts
 
@@ -102,9 +102,9 @@ Things may vary per device and you may want to customize it, which I will ***mar
 - `IntelMausi`: Intel Ethernet LAN driver for macOS.
 - `NVMeFix`: Fix random kernel panic after wake caused by NVMe device.
 - `AirportBrcmFixup`: Fix Wi-Fi lagging after wake.
-- *`USBPorts`: Custom USB ports mapping for iMac19,1. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:*
+- *`USBPorts`: Custom USB ports mapping for iMac19,1. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:
   
-  <details><summary><i>Details</i></summary>
+  <details><summary>Details</summary>
   
     ```zsh
     01. HS01 - Internal - BRCM20702 Hub
@@ -129,12 +129,12 @@ Things may vary per device and you may want to customize it, which I will ***mar
 
 ### Tools
 
-- *`ResetSystem.efi`: I choose `Firmware` argument in config.plist to reboot into BIOS firmware settings when necessary. Change as you wish.*
+- *`ResetSystem.efi`: I choose `Firmware` argument in config.plist to reboot into BIOS firmware settings when necessary. Change as you wish.
 
 ### config.plist
 
-- *`DeviceProperties`: I put `layout-id`, `igfxfw` and `shikigva` arguments here. You can delete them from here and put into boot-args if you wish. Here I use `layout-id 92`. Even if the `Address` is not the same with our spec, I find it working well with this layout. I use `shikigva 80` to fix DRM, delete it if you are experiencing screen freezing issue.*
-- *`Generic`: You should generate SMBIOS info by using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to fix iServices, and make sure it is "Invalid Serial" or "Purchase Date not Validated" (i.e., no conflict with real Macs) for your own good by checking [Apple Check Coverage page](https://checkcoverage.apple.com/).*
+- *`DeviceProperties`: I put `layout-id`, `igfxfw` and `shikigva` arguments here. You can delete them from here and put into boot-args if you wish. Here I use `layout-id 92`. Even if the `Address` is not the same with our spec, I find it working well with this layout. I use `shikigva 80` to fix DRM, delete it if you are experiencing screen freezing issue.
+- *`Generic`: You should generate SMBIOS info by using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to fix iServices, and make sure it is "Invalid Serial" or "Purchase Date not Validated" (i.e., no conflict with real Macs) for your own good by checking [Apple Check Coverage page](https://checkcoverage.apple.com/).
 
 ## Changelog
 
