@@ -4,11 +4,13 @@
 
 # MSI B360M Hackintosh Build & Changelog
 
-working well with macOS Catalina 10.15.6 (19G2021)
+working well with macOS Catalina 10.15.6 (19G2021) on OpenCore v0.6.0
 
 > **Please Note**: This is not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
 
 ## Limitations
+
+**PLEASE READ THIS PAGE BEFORE USING** as many settings are up to specific hardware and needed to adjust first.
 
 This configuration may only suitable for those who have **both iGPU (computing only) and dGPU**. If you are using specs that have only iGPU or only dGPU, I suggest not using this configuration because you may want to change model from iMac19,1 to other models. Otherwise you would experience blackscreen or magenta screen or some other undefined behaviour.
 
@@ -79,17 +81,17 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 - `SSDT-AWAC`: Re-enable the old RTC clock that is compatible with macOS.
 - `SSDT-EC-USBX`: Fix desktop EC and USB port quick charge for iDevices.
-- `SSDT-PLUG`: Allow the kernel's XCPM (XNU's CPU Power Management) to manage our CPU's power management.
+- `SSDT-PLUG`: Allow the kernel's XCPM (XNU's CPU Power Management) to manage our CPU's power management. Auto detect.
 - `SSDT-PMCR`: Fix NVRAM support for 300 series motherboard.
-- *`SSDT-SBUS-MCHC`: Not needed. Fix AppleSMBus support.
-- *`SSDT-MEM2-DMAC`: Not needed. Just to fill out missing part.
+- `* SSDT-SBUS-MCHC`: Not necessary. Fix AppleSMBus support.
+- `* SSDT-MEM2-DMAC`: Not necessary. Just to fill out missing part.
 
 ### Drivers
 
 - `OpenRuntime.efi`: Work with `Booter` quirks in config.plist.
 - `HfsPlus.efi`: Support HFS+ File System which is used by Recovery and Time Machine.
 - `OpenCanopy.efi`: Bring GUI for OpenCore.
-- *`ExFatDxe.efi`: Not needed. I put it here because of the exFAT formatted HDD that I have.
+- `* ExFatDxe.efi`: Not necessary. I put it here because of the exFAT formatted HDD that I have.
 
 ### Kexts
 
@@ -102,7 +104,7 @@ Things may vary per device and you may want to customize it, which I will **mark
 - `IntelMausi`: Intel Ethernet LAN driver for macOS.
 - `NVMeFix`: Fix random kernel panic after wake caused by NVMe device.
 - `AirportBrcmFixup`: Fix Wi-Fi lagging after wake.
-- *`USBPorts`: Custom USB ports mapping for iMac19,1. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:
+- `* USBPorts`: Custom USB ports mapping for iMac19,1. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:
   
   <details><summary>Details</summary>
   
@@ -129,12 +131,15 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ### Tools
 
-- *`ResetSystem.efi`: I choose `Firmware` argument in config.plist to reboot into BIOS firmware settings when necessary. Change as you wish.
+- `* ResetSystem.efi`: I choose `Firmware` argument in config.plist to reboot into BIOS firmware settings when necessary. Change as you wish.
 
 ### config.plist
 
-- *`DeviceProperties`: I put `layout-id`, `igfxfw` and `shikigva` arguments here. You can delete them from here and put into boot-args if you wish. Here I use `layout-id 92`. Even if the `Address` is not the same with our spec, I find it working well with this layout. I use `shikigva 80` to fix DRM, delete it if you are experiencing screen freezing issue.
-- *`Generic`: You should generate SMBIOS info by using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to fix iServices, and make sure it is "Invalid Serial" or "Purchase Date not Validated" (i.e., no conflict with real Macs) for your own good by checking [Apple Check Coverage page](https://checkcoverage.apple.com/).
+- `* DeviceProperties`: I put `layout-id`, `igfxfw` and `shikigva` arguments here. You can delete them from here and put into boot-args if you wish.  
+  Here I choose `layout-id 92` to fix audio. Even if the `Address` is not the same with our spec, I find it working well with this layout.  
+  I use `shikigva 80` to fix DRM, delete it if you are experiencing screen freezing issue.  
+  The `igfxfw` value here is used to load Apple GuC firmware, delete it if you are experiencing display issues.
+- `* Generic`: You should generate SMBIOS info by using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to fix iServices, and make sure it is "Invalid Serial" or "Purchase Date not Validated" (i.e., no conflict with real Macs) for your own good by checking [Apple Check Coverage page](https://checkcoverage.apple.com/).
 
 ## Changelog
 
