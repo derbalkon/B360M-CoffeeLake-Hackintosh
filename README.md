@@ -4,7 +4,7 @@
 
 # MSI B360M Hackintosh Build & Changelog
 
-working well with macOS Catalina 10.15.6 (19G2021) on OpenCore v0.6.0
+working well with macOS Catalina 10.15.6 (19G2021) on OpenCore v0.6.1
 
 > **Please Note**: This is not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
 
@@ -91,7 +91,6 @@ Things may vary per device and you may want to customize it, which I will **mark
 - `OpenRuntime.efi`: Work with `Booter` quirks in config.plist.
 - `HfsPlus.efi`: Support HFS+ File System which is used by Recovery and Time Machine.
 - `OpenCanopy.efi`: Bring GUI for OpenCore.
-- `* ExFatDxe.efi`: Not necessary. I put it here because of the exFAT formatted HDD that I have.
 
 ### Kexts
 
@@ -142,6 +141,18 @@ Things may vary per device and you may want to customize it, which I will **mark
 - `* Generic`: You should generate SMBIOS info by using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to fix iServices, and make sure it is "Invalid Serial" or "Purchase Date not Validated" (i.e., no conflict with real Macs) for your own good by checking [Apple Check Coverage page](https://checkcoverage.apple.com/).
 
 ## Changelog
+
+### 09/07/2020
+
+- Updated OpenCore to v0.6.1
+- Updated `Lilu` and her friends
+- Set `DiscardHibernateMap` to `false` as I turned off hibernate on Windows
+- Added `Arch` and `MinKernel` settings to meet OpenCore's latest standard
+- Set `DisableLinkeditJettison` to `true` to let `Lilu` and others function in macOS Big Sur with best performance without `keepsyms=1` boot argument
+- Added **Medium Security** of Apple Secure Boot, which means `SecureBootModel` set to `Default`, `ApECID` set to `0` and `DmgLoading` set to `Signed`
+- Set `AdviseWindows` to `false` as EFI partition is first on the Windows drive
+- Deleted `ExFatDxe.efi`
+- *Note*: Hotkeys to launch BootKicker now works fine as OpenCore now won't reset input protocols any more
 
 ### 08/04/2020
 
