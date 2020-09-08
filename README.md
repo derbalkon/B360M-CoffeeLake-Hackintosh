@@ -152,7 +152,7 @@ Things may vary per device and you may want to customize it, which I will **mark
 - Added **Medium Security** of Apple Secure Boot, which means `SecureBootModel` set to `Default`, `ApECID` set to `0` and `DmgLoading` set to `Signed`
 - Set `AdviseWindows` to `false` as EFI partition is first on the Windows drive
 - Deleted `ExFatDxe.efi`
-- *Note*: Hotkeys to launch BootKicker now works fine as OpenCore now won't reset input protocols any more
+- *Note*: Hotkeys to launch picker now works fine as OpenCore now won't reset input protocols any more
 
 ### 08/04/2020
 
