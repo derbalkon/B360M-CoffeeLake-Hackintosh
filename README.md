@@ -142,6 +142,10 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
+### 09/11/2020
+
+- Added boot argument `darkwake=no` or it won't wake unless key is hit twice
+
 ### 09/07/2020
 
 - Updated OpenCore to v0.6.1
