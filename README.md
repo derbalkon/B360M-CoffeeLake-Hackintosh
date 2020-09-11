@@ -140,7 +140,7 @@ Things may vary per device and you may want to customize it, which I will **mark
   The `igfxfw` value here is used to load Apple GuC firmware, delete it if you are experiencing display issues.
 - `* Generic`: You should generate SMBIOS info by using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to fix iServices, and make sure it is "Invalid Serial" or "Purchase Date not Validated" (i.e., no conflict with real Macs) for your own good by checking [Apple Check Coverage page](https://checkcoverage.apple.com/).
 
-## Know Issues
+## Known Issues
 
 ### "I have to press keys twice to wake up."
 
