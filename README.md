@@ -140,11 +140,17 @@ Things may vary per device and you may want to customize it, which I will **mark
   The `igfxfw` value here is used to load Apple GuC firmware, delete it if you are experiencing display issues.
 - `* Generic`: You should generate SMBIOS info by using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to fix iServices, and make sure it is "Invalid Serial" or "Purchase Date not Validated" (i.e., no conflict with real Macs) for your own good by checking [Apple Check Coverage page](https://checkcoverage.apple.com/).
 
+## Know Issues
+
+### "I have to press keys twice to wake up."
+
+It may related to HID Tickle mode. You may add boot argument `darkwake=no` (or `=1`? `=2`? I'm not sure) to fix this. BUT it might also cause your graphic card fan spinning at full speed. Use at your own risk.
+
+> The default value on macOS Catalina for `gDarkWakeFlags` is `0x00000003`, which equals to `3` (`kDarkWakeFlagHIDTickleNone`). So by default Darkwake should not post any HID Tickle's. This also reveals the secret why some users encounter issues with frozen peripheral device's on Hack's when Power Nap is enabled. To use Darkwake on Hack's require very well configured USB ports.
+>
+> — [holyfield](https://www.insanelymac.com/forum/topic/342002-darkwake-on-macos-catalina-boot-args-darkwake8-darkwake10-are-obsolete/)
+
 ## Changelog
-
-### 09/11/2020
-
-- Added boot argument `darkwake=no` or it won't wake unless key is hit twice
 
 ### 09/07/2020
 
