@@ -78,7 +78,7 @@ Things may vary per device and you may want to customize it, which I will **mark
 ### ACPI
 
 - `SSDT-AWAC`: Re-enable the old RTC clock that is compatible with macOS.
-- `SSDT-EC-USBX`: Fix desktop EC and USB port quick charge for iDevices.
+- `SSDT-EC`: Create fake EC device for desktop.
 - `SSDT-PLUG`: Allow the kernel's XCPM (XNU's CPU Power Management) to manage our CPU's power management. Auto detect.
 - `SSDT-PMCR`: Fix NVRAM support for 300 series motherboard.
 - `* SSDT-SBUS-MCHC`: Not necessary. Fix AppleSMBus support.
@@ -101,14 +101,14 @@ Things may vary per device and you may want to customize it, which I will **mark
 - `IntelMausi`: Intel Ethernet LAN driver for macOS.
 - `NVMeFix`: Fix random kernel panic after wake caused by NVMe device.
 - `AirportBrcmFixup`: Fix Wi-Fi lagging after wake.
-- `* USBPorts`: Custom USB ports mapping for iMac19,1. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:
+- `* USBPorts`: Custom USB ports mapping and quick charge fix-up for iMac19,1. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:
   
   <details><summary>Details</summary>
   
     ```zsh
     01. HS01 - Internal - BRCM20702 Hub
     02. HS03 - Internal - USB Keyboard
-    03. HS04 - USB 2 - Back USB 2
+    03. HS04 - Internal - USB Mouse
     04. HS05 - USB 3 - Back USB 3 (SS01)
     05. HS07 - USB 2 - Back USB 2
     06. HS08 - USB 2 - Back USB 2
@@ -151,6 +151,15 @@ Things may vary per device and you may want to customize it, which I will **mark
 - Or try adding `SSDT-USBW.aml` and `USBWakeFixup.kext`. You can find them in the `/Extras` folder.
 
 ## Changelog
+
+### 09/17/2020
+
+- Added `bootstrap` for better booting experience
+- Merged USB quick charging into `USBPorts.kext`
+- Fixed USB mapping IOClass from `AppleUSBMergeNub` to `AppleUSBHostMergeProperties` to match Catalina standard
+- Disabled some debug terms as this is a `REALEASE` build
+- Disabled `SetupVirtualMap`, not needed for MSI B360M
+- Disabled Apple Secure Boot, yeah, changed my mind
 
 ### 09/07/2020
 
