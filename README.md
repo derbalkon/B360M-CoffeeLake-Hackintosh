@@ -1,18 +1,18 @@
-<div align="center"><img src="Extras/readme-cover.png"></div>
-
 # MSI B360M Hackintosh Build & Changelog
 
-working well with macOS Catalina 10.15.6 (19G2021) on OpenCore v0.6.1
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.1-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.6-9cf)](https://www.apple.com/macos/catalina/)
+![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
-> **Please Note**: This is not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
+> **Please Note**: This is only a personal build backup, not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
 
 ## Limitations
 
-**PLEASE READ THIS PAGE BEFORE USING** as many settings are up to specific hardware and needed to adjust first.
+<img src="Extras/readme-cover.png" align="right" width="500" />
 
-This configuration may only suitable for those who have **both iGPU (computing only) and dGPU**. If you are using specs that have only iGPU or only dGPU, I suggest not using this configuration because you may want to change model from iMac19,1 to other models. Otherwise you would experience blackscreen or magenta screen or some other undefined behaviour.
+This configuration may **ONLY** suitable for those who have **BOTH iGPU (computing only) AND dGPU**. If you are using specs that have only iGPU or dGPU, I suggest not using this configuration, or you may experience some other undefined behaviours.
 
-Hackintosh building is a process that requires proper debugging skills, sometimes depending on specific hardware with a little bit of luck. Decent OS running experience can only be guaranteed with specifications very much the same as mine if you decide to use this configuration.
+This is a process that requires proper debugging skills, sometimes depending on specific hardware with a little bit of luck. Decent OS running experience can only be guaranteed with specs very much the same as mine if you decide to use this configuration.
 
 ## Hardware List
 
@@ -75,68 +75,82 @@ Hackintosh building is a process that requires proper debugging skills, sometime
 
 Things may vary per device and you may want to customize it, which I will **mark with * at the beginning**. Let's take a look from the folder level:
 
-### ACPI
+<details><summary><strong>ACPI</strong></summary>
 
-- `SSDT-AWAC`: Re-enable the old RTC clock that is compatible with macOS.
-- `SSDT-EC`: Create fake EC device for desktop.
-- `SSDT-PLUG`: Allow the kernel's XCPM (XNU's CPU Power Management) to manage our CPU's power management. Auto detect.
-- `SSDT-PMCR`: Fix NVRAM support for 300 series motherboard.
-- `* SSDT-SBUS-MCHC`: Not necessary. Fix AppleSMBus support.
-- `* SSDT-MEM2-DMAC`: Not necessary. Just to fill out missing part.
+  - `SSDT-AWAC`: Re-enable the old RTC clock that is compatible with macOS.
+  - `SSDT-EC`: Create fake EC device for desktop.
+  - `SSDT-PLUG`: Allow the kernel's XCPM (XNU's CPU Power Management) to manage our CPU's power management. Auto detect.
+  - `SSDT-PMCR`: Fix NVRAM support for 300 series motherboard.
+  - `* SSDT-SBUS-MCHC`: Not necessary. Fix AppleSMBus support.
+  - `* SSDT-MEM2-DMAC`: Not necessary. Just to fill out missing part.
 
-### Drivers
+</details>
 
-- `OpenRuntime.efi`: Work with `Booter` quirks in config.plist.
-- `HfsPlus.efi`: Support HFS+ File System which is used by Recovery and Time Machine.
-- `OpenCanopy.efi`: Bring GUI for OpenCore.
+<details><summary><strong>Bootstrap</strong></summary>
 
-### Kexts
+  - `Bootstrap.efi`: Same file as BOOTX64.efi to avoid boot entry override.
 
-- `Lilu`: Other kexts depending on this one.
-- `VirtualSMC`: SMC emulator layer.
-- `SMCProcessor`: CPU sensor support.
-- `SMCSuperIO`: IO sensor support.
-- `WhateverGreen`: Various patches necessary for GPU.
-- `AppleALC`: Native macOS HD audio for not officially supported codecs.
-- `IntelMausi`: Intel Ethernet LAN driver for macOS.
-- `NVMeFix`: Fix random kernel panic after wake caused by NVMe device.
-- `AirportBrcmFixup`: Fix Wi-Fi lagging after wake.
-- `* USBPorts`: Custom USB ports mapping and quick charge fix-up for iMac19,1. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:
+</details>
+
+<details><summary><strong>Drivers</strong></summary>
+
+  - `OpenRuntime.efi`: Work with `Booter` quirks in config.plist.
+  - `HfsPlus.efi`: Support HFS+ File System which is used by Recovery and Time Machine.
+  - `OpenCanopy.efi`: Bring GUI for OpenCore.
+
+</details>
+
+<details><summary><strong>Kexts</strong></summary>
+
+  - `Lilu`: Other kexts depending on this one.
+  - `VirtualSMC`: SMC emulator layer.
+  - `SMCProcessor`: CPU sensor support.
+  - `SMCSuperIO`: IO sensor support.
+  - `WhateverGreen`: Various patches necessary for GPU.
+  - `AppleALC`: Native macOS HD audio for not officially supported codecs.
+  - `IntelMausi`: Intel Ethernet LAN driver for macOS.
+  - `NVMeFix`: Fix random kernel panic after wake caused by NVMe device.
+  - `AirportBrcmFixup`: Fix Wi-Fi lagging after wake.
+  - `* USBPorts`: Custom USB ports mapping and quick charge fix-up for iMac19,1. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:
+    
+      ```zsh
+      1.  HS01 - Internal - BRCM20702 Hub
+      2.  HS03 - Internal - USB Keyboard
+      3.  HS04 - Internal - USB Mouse
+      4.  HS05 - USB 3 - Back USB 3 (SS01)
+      5.  HS07 - USB 2 - Back USB 2
+      6.  HS08 - USB 2 - Back USB 2
+      7.  HS09 - USB 3 - Front USB 3 (SS05)
+      8.  HS10 - USB 3 - Front USB 3 (SS06)
+      9.  SS01 - Type 3 - Back USB 3
+      10. SS02 - TypeC+Sw - Back Type C
+      11. SS05 - USB 3 - Front USB 3
+      12. SS06 - USB 3 - Front USB 3
+      ```
+
+</details>
   
-  <details><summary>Details</summary>
-  
-    ```zsh
-    01. HS01 - Internal - BRCM20702 Hub
-    02. HS03 - Internal - USB Keyboard
-    03. HS04 - Internal - USB Mouse
-    04. HS05 - USB 3 - Back USB 3 (SS01)
-    05. HS07 - USB 2 - Back USB 2
-    06. HS08 - USB 2 - Back USB 2
-    07. HS09 - USB 3 - Front USB 3 (SS05)
-    08. HS10 - USB 3 - Front USB 3 (SS06)
-    09. SS01 - Type 3 - Back USB 3
-    10. SS02 - TypeC+Sw - Back Type C
-    11. SS05 - USB 3 - Front USB 3
-    12. SS06 - USB 3 - Front USB 3
-    ```
-  
-  </details>
-  
-### Resources
+<details><summary><strong>Resources</strong></summary>
 
-- Here put OpenCanopy resources.
+  - Here put OpenCanopy resources.
 
-### Tools
+</details>
 
-- `* ResetSystem.efi`: I choose `Firmware` argument in config.plist to reboot into BIOS firmware settings when necessary. Change as you wish.
+<details><summary><strong>Tools</strong></summary>
 
-### config.plist
+  - `* ResetSystem.efi`: I choose `Firmware` argument in config.plist to reboot into BIOS firmware settings when necessary. Change as you wish.
 
-- `* DeviceProperties`: I put `layout-id`, `igfxfw` and `shikigva` arguments here. You can delete them from here and put into boot-args if you wish.  
-  Here I choose `layout-id 92` to fix audio. Even if the `Address` is not the same with our spec, I find it working well with this layout.  
-  I use `shikigva 80` to fix DRM, delete it if you are experiencing screen freezing issue.  Also, Safari 14 breaks DRM on either Catalina or Big Sur. If you need to stream Netflix on Safari, do not update Safari yet.
-  The `igfxfw` value here is used to load Apple GuC firmware, delete it if you are experiencing display issues.
-- `* Generic`: You should generate SMBIOS info by using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to fix iServices, and make sure it is "Invalid Serial" or "Purchase Date not Validated" (i.e., no conflict with real Macs) for your own good by checking [Apple Check Coverage page](https://checkcoverage.apple.com/).
+</details>
+
+<details><summary><strong>config.plist</strong></summary>
+
+  - `* DeviceProperties`: I put `layout-id`, `igfxfw` and `shikigva` arguments here. You can delete them from here and put into boot-args if you wish.  
+    Here I choose `layout-id 92` to fix audio. Even if the `Address` is not the same with our spec, I find it working well with this layout.  
+    I use `shikigva 80` to fix DRM, delete it if you are experiencing screen freezing issue.  Also, Safari 14 breaks DRM on either Catalina or Big Sur. If you need to stream Netflix on Safari, do not update Safari yet.
+    The `igfxfw` value here is used to load Apple GuC firmware, delete it if you are experiencing display issues.
+  - `* Generic`: You should generate SMBIOS info by using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to fix iServices, and make sure it is "Invalid Serial" or "Purchase Date not Validated" (i.e., no conflict with real Macs) for your own good by checking [Apple Check Coverage page](https://checkcoverage.apple.com/).
+
+</details>
 
 ## Known Issues
 
@@ -150,6 +164,11 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 - Or try adding `SSDT-USBW.aml` and `USBWakeFixup.kext`. You can find them in the `/Extras` folder.
 
+### "DRM won't work after I update Safari 14."
+
+- Yes, Safari 14 breaks DRM patch on both Catalina and Big Sur on iMac19,1 SMBIOS w/ shikigva=80.
+- I'm not sure if iMacPro1,1 SMBIOS w/ shikigva=128 will do any better.
+
 ## Changelog
 
 ### 09/17/2020
@@ -161,34 +180,38 @@ Things may vary per device and you may want to customize it, which I will **mark
 - Disabled `SetupVirtualMap`, not needed for MSI B360M
 - Disabled Apple Secure Boot, yeah, changed my mind
 
-### 09/07/2020
+<details><summary><strong>History changes</strong></summary>
 
-- Updated OpenCore to v0.6.1
-- Updated `Lilu` and her friends
-- Set `DiscardHibernateMap` to `false` as I turned off hibernate on Windows
-- Added `Arch` and `MinKernel` settings to meet OpenCore's latest standard
-- Set `DisableLinkeditJettison` to `true` to let `Lilu` and others function in macOS Big Sur with best performance without `keepsyms=1` boot argument
-- Added **Medium Security** of Apple Secure Boot, which means `SecureBootModel` set to `Default`, `ApECID` set to `0` and `DmgLoading` set to `Signed`
-- Set `AdviseWindows` to `false` as EFI partition is first on the Windows drive
-- Deleted `ExFatDxe.efi`
-- *Note*: Hotkeys to launch picker now works fine as OpenCore now won't reset input protocols any more
+  ### 09/07/2020
 
-### 08/04/2020
+  - Updated OpenCore to v0.6.1
+  - Updated `Lilu` and her friends
+  - Set `DiscardHibernateMap` to `false` as I turned off hibernate on Windows
+  - Added `Arch` and `MinKernel` settings to meet OpenCore's latest standard
+  - Set `DisableLinkeditJettison` to `true` to let `Lilu` and others function in macOS Big Sur with best performance without `keepsyms=1` boot argument
+  - Added **Medium Security** of Apple Secure Boot, which means `SecureBootModel` set to `Default`, `ApECID` set to `0` and `DmgLoading` set to `Signed`
+  - Set `AdviseWindows` to `false` as EFI partition is first on the Windows drive
+  - Deleted `ExFatDxe.efi`
+  - *Note*: Hotkeys to launch picker now works fine as OpenCore now won't reset input protocols any more
 
-- Updated OpenCore to v0.6.0
-- Optimized ACPI hotpatches: `SSDT-EC-USBX`, `SSDT-AWAC`, `SSDT-PLUG`, `SSDT-PMCR`
-- Added new ACPI hotpatches for final touch: `SSDT-MEM2-DMAC`, `SSDT-SBUS-MCHC`
-- Updated `Lilu` and her friends
-- Deleted `CPUFriend` as i5-9400 does not necessarily need this
-- Added `AirportBrcmFixup` to fix Wi-Fi lagging after sleeping
-- Added an icon for `ResetSystem.efi`
-- Changed some `<data>` fields in config to `<number>` and `<string>` to avoid being eaten by Xcode 11
-- Added `Firmware` mode to ResetSystem to reboot into BIOS settings
-- Moved `shikigva` and `igfxfw` from `boot-arg` into `DeviceProperties`
+  ### 08/04/2020
 
-### 06/04/2020
+  - Updated OpenCore to v0.6.0
+  - Optimized ACPI hotpatches: `SSDT-EC-USBX`, `SSDT-AWAC`, `SSDT-PLUG`, `SSDT-PMCR`
+  - Added new ACPI hotpatches for final touch: `SSDT-MEM2-DMAC`, `SSDT-SBUS-MCHC`
+  - Updated `Lilu` and her friends
+  - Deleted `CPUFriend` as i5-9400 does not necessarily need this
+  - Added `AirportBrcmFixup` to fix Wi-Fi lagging after sleeping
+  - Added an icon for `ResetSystem.efi`
+  - Changed some `<data>` fields in config to `<number>` and `<string>` to avoid being eaten by Xcode 11
+  - Added `Firmware` mode to ResetSystem to reboot into BIOS settings
+  - Moved `shikigva` and `igfxfw` from `boot-arg` into `DeviceProperties`
 
-- Initiated repository
+  ### 06/04/2020
+
+  - Initiated repository
+
+</details>
 
 ## Credit
 
