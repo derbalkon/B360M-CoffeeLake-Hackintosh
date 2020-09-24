@@ -8,7 +8,7 @@
 
 ## Limitations
 
-<img src="Extras/readme-cover.png" align="right" width="500" />
+<img src="Extras/readme-cover.png" align="right" width="400" />
 
 This configuration may **ONLY** suitable for those who have **BOTH iGPU (computing only) AND dGPU**. If you are using specs that have only iGPU or dGPU, I suggest not using this configuration, or you may experience some other undefined behaviours.
 
@@ -146,7 +146,7 @@ Things may vary per device and you may want to customize it, which I will **mark
 
   - `* DeviceProperties`: I put `layout-id`, `igfxfw` and `shikigva` arguments here. You can delete them from here and put into boot-args if you wish.  
     Here I choose `layout-id 92` to fix audio. Even if the `Address` is not the same with our spec, I find it working well with this layout.  
-    I use `shikigva 80` to fix DRM, delete it if you are experiencing screen freezing issue.  Also, Safari 14 breaks DRM on either Catalina or Big Sur. If you need to stream Netflix on Safari, do not update Safari yet.
+    I use `shikigva 80` to fix DRM, delete it if you are experiencing screen freezing issue. 
     The `igfxfw` value here is used to load Apple GuC firmware, delete it if you are experiencing display issues.
   - `* Generic`: You should generate SMBIOS info by using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to fix iServices, and make sure it is "Invalid Serial" or "Purchase Date not Validated" (i.e., no conflict with real Macs) for your own good by checking [Apple Check Coverage page](https://checkcoverage.apple.com/).
 
@@ -166,8 +166,8 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ### "DRM won't work after I update Safari 14."
 
-- Yes, Safari 14 breaks DRM patch on both Catalina and Big Sur on iMac19,1 SMBIOS w/ shikigva=80.
-- I'm not sure if iMacPro1,1 SMBIOS w/ shikigva=128 will do any better.
+- Yes, Safari 14 breaks DRM patch on both Catalina and Big Sur on `iMac19,1` SMBIOS w/ `shikigva=80`.
+- I'm not sure if `iMacPro1,1` SMBIOS w/ `shikigva=128` will do any better.
 
 ## Changelog
 
