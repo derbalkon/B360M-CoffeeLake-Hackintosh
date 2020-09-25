@@ -1,14 +1,14 @@
 # MSI B360M Hackintosh Build & Changelog
 
 [![OpenCore](https://img.shields.io/badge/OpenCore-0.6.1-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
-[![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.6-9cf)](https://www.apple.com/macos/catalina/)
+[![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.7-9cf)](https://www.apple.com/macos/catalina/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
 > **Please Note**: This is only a personal build backup, not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
 
-## Limitations
-
 <img src="Extras/readme-cover.png" align="right" width="400" />
+
+## Limitation
 
 This configuration may **ONLY** suitable for those who have **BOTH iGPU (computing only) AND dGPU**. If you are using specs that have only iGPU or dGPU, I suggest not using this configuration, or you may experience some other undefined behaviours.
 
