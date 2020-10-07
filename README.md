@@ -1,6 +1,6 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.1-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.2-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
 [![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.7-9cf)](https://www.apple.com/macos/catalina/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
@@ -82,7 +82,6 @@ Things may vary per device and you may want to customize it, which I will **mark
   - `SSDT-PLUG`: Allow the kernel's XCPM (XNU's CPU Power Management) to manage our CPU's power management. Auto detect.
   - `SSDT-PMCR`: Fix NVRAM support for 300 series motherboard.
   - `* SSDT-SBUS-MCHC`: Not necessary. Fix AppleSMBus support.
-  - `* SSDT-MEM2-DMAC`: Not necessary. Just to fill out missing part.
 
 </details>
 
@@ -171,16 +170,23 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 09/17/2020
+### 10/07/2020
 
-- Added `bootstrap` for better booting experience
-- Merged USB quick charging into `USBPorts.kext`
-- Fixed USB mapping IOClass from `AppleUSBMergeNub` to `AppleUSBHostMergeProperties` to match Catalina standard
-- Disabled some debug terms as this is a `RELEASE` build
-- Disabled `SetupVirtualMap`, not needed for MSI B360M
-- Disabled Apple Secure Boot, yeah, changed my mind
+- Updated OpenCore to v0.6.2
+- Updated `Lilu` and her friends
+- Set new entries of OpenCore v0.6.2 config to failsafe as they are mainly relevant to legacy machines
+- Drop `SSDT-MEM2-DMAC.aml`, not necessary
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 09/17/2020
+
+  - Added `bootstrap` for better booting experience
+  - Merged USB quick charging into `USBPorts.kext`
+  - Fixed USB mapping IOClass from `AppleUSBMergeNub` to `AppleUSBHostMergeProperties` to match Catalina standard
+  - Disabled some debug terms as this is a `RELEASE` build
+  - Disabled `SetupVirtualMap`, not needed for MSI B360M
+  - Disabled Apple Secure Boot, yeah, changed my mind
 
   ### 09/07/2020
 
