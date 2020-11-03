@@ -1,6 +1,6 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.2-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.3-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
 [![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.7-9cf)](https://www.apple.com/macos/catalina/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
@@ -170,14 +170,19 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 10/07/2020
+### 11/03/2020
 
-- Updated OpenCore to v0.6.2
+- Updated OpenCore to v0.6.3
 - Updated `Lilu` and her friends
-- Set new entries of OpenCore v0.6.2 config to failsafe as they are mainly relevant to legacy machines
-- Drop `SSDT-MEM2-DMAC.aml`, not necessary
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 10/07/2020
+
+  - Updated OpenCore to v0.6.2
+  - Updated `Lilu` and her friends
+  - Set new entries of OpenCore v0.6.2 config to failsafe as they are mainly relevant to legacy machines
+  - Drop `SSDT-MEM2-DMAC.aml`, not necessary
 
   ### 09/17/2020
 
