@@ -1,7 +1,7 @@
 # MSI B360M Hackintosh Build & Changelog
 
 [![OpenCore](https://img.shields.io/badge/OpenCore-0.6.3-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
-[![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.7-9cf)](https://www.apple.com/macos/catalina/)
+[![MacOS Big Sur](https://img.shields.io/badge/macOS-11.0.1-9cf)](https://www.apple.com/macos/big-sur/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
 > **Please Note**: This is only a personal build backup, not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
@@ -170,12 +170,16 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 11/03/2020
+### 11/18/2020
 
-- Updated OpenCore to v0.6.3
-- Updated `Lilu` and her friends
+- Adjust `USBPorts.kext` to support Apple quick charge for Big Sur.
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 11/03/2020
+
+  - Updated OpenCore to v0.6.3
+  - Updated `Lilu` and her friends
 
   ### 10/07/2020
 
