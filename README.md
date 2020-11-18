@@ -173,6 +173,7 @@ Things may vary per device and you may want to customize it, which I will **mark
 ### 11/18/2020
 
 - Adjust `USBPorts.kext` to support Apple quick charge for Big Sur.
+- Drop WhateverGreen DRM for Big Sur.
 
 <details><summary><strong>History changes</strong></summary>
 
