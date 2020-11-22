@@ -110,7 +110,7 @@ Things may vary per device and you may want to customize it, which I will **mark
   - `IntelMausi`: Intel Ethernet LAN driver for macOS.
   - `NVMeFix`: Fix random kernel panic after wake caused by NVMe device.
   - `AirportBrcmFixup`: Fix Wi-Fi lagging after wake.
-  - `* USBPorts`: Custom USB ports mapping and quick charge fix-up for iMac19,1. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:
+  - `* USBPorts`: Custom USB ports mapping and quick charge fix-up for iMac19,2. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:
     
       ```zsh
       1.  HS01 - Internal - BRCM20702 Hub
