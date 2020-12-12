@@ -170,12 +170,19 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 11/18/2020
+### 12/12/2020
 
-- Adjust `USBPorts.kext` to support Apple quick charge for Big Sur.
-- Drop WhateverGreen DRM for Big Sur.
+- Updated OpenCore to v0.6.3
+- Updated `Lilu` and her friends
+- Deprecated `run-efi-updater` NVRAM variable (not working on Big Sur) and enabled `BlacklistAppleUpdate` quirk
+- Added `SystemAudioVolume` NVRAM variable to meet the latest `PlayChime` standard
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 11/18/2020
+
+  - Adjust `USBPorts.kext` to support Apple quick charge for Big Sur.
+  - Drop WhateverGreen DRM for Big Sur.
 
   ### 11/03/2020
 
