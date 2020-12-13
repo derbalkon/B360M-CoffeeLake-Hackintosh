@@ -176,6 +176,7 @@ Things may vary per device and you may want to customize it, which I will **mark
 - Updated `Lilu` and her friends
 - Deprecated `run-efi-updater` NVRAM variable (not working on Big Sur) and enabled `BlacklistAppleUpdate` quirk
 - Added `SystemAudioVolume` NVRAM variable to meet the latest `PlayChime` standard
+- Disabled `DeduplicateBootOrder` as is now deprecated
 
 <details><summary><strong>History changes</strong></summary>
 
