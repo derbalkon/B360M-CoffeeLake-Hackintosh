@@ -1,6 +1,6 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.3-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.4-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
 [![MacOS Big Sur](https://img.shields.io/badge/macOS-11.1-9cf)](https://www.apple.com/macos/big-sur/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
