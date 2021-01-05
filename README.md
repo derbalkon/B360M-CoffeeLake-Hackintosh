@@ -1,6 +1,6 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.4-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.5-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
 [![MacOS Big Sur](https://img.shields.io/badge/macOS-11.1-9cf)](https://www.apple.com/macos/big-sur/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
@@ -145,7 +145,7 @@ Things may vary per device and you may want to customize it, which I will **mark
 
   - `* DeviceProperties`: I put `layout-id`, `igfxfw` and `shikigva` arguments here. You can delete them from here and put into boot-args if you wish.  
     Here I choose `layout-id 92` to fix audio. Even if the `Address` is not the same with our spec, I find it working well with this layout.  
-    I use `shikigva 80` to fix DRM, delete it if you are experiencing screen freezing issue. 
+    I use `shikigva 80` to fix DRM, delete it if you are experiencing screen freezing issue.
     The `igfxfw` value here is used to load Apple GuC firmware, delete it if you are experiencing display issues.
   - `* Generic`: You should generate SMBIOS info by using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to fix iServices, and make sure it is "Invalid Serial" or "Purchase Date not Validated" (i.e., no conflict with real Macs) for your own good by checking [Apple Check Coverage page](https://checkcoverage.apple.com/).
 
@@ -170,20 +170,30 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 12/12/2020
+### 01/06/2021
 
-- Updated OpenCore to v0.6.3
+- Updated OpenCore to v0.6.5
 - Updated `Lilu` and her friends
-- Deprecated `run-efi-updater` NVRAM variable (not working on Big Sur) and enabled `BlacklistAppleUpdate` quirk
-- Added `SystemAudioVolume` NVRAM variable to meet the latest `PlayChime` standard
-- Disabled `DeduplicateBootOrder` as is now deprecated
+- Set `PickerAttributes` to `25`
+- Set `PickerVariable` to `Modern`
+- Updated `EFI/OC/Resources/Image` to experience modern boot picker icon set (Big Sur style)
+- Deprecated `DeduplicateBootOrder` quirk
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 12/12/2020
+
+  - Updated OpenCore to v0.6.4
+  - Updated `Lilu` and her friends
+  - Enabled `ResetLogoStatus` to fix potential logo missing problem when booting Windows
+  - Deprecated `run-efi-updater` NVRAM variable (not working on Big Sur) and enabled `BlacklistAppleUpdate` quirk
+  - Added `SystemAudioVolume` NVRAM variable to meet the latest `PlayChime` standard
+  - Disabled `DeduplicateBootOrder` as is now deprecated
 
   ### 11/18/2020
 
   - Adjust `USBPorts.kext` to support Apple quick charge for Big Sur.
-  - Drop WhateverGreen DRM for Big Sur.
+  - Drop WhateverGreen DRM patch for Big Sur.
 
   ### 11/03/2020
 
