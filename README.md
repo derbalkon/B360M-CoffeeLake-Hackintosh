@@ -1,7 +1,7 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.5-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
-[![MacOS Big Sur](https://img.shields.io/badge/macOS-11.1-9cf)](https://www.apple.com/macos/big-sur/)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.6-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![MacOS Big Sur](https://img.shields.io/badge/macOS-11.2-9cf)](https://www.apple.com/macos/big-sur/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
 > **Please Note**: This is only a personal build backup, not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
@@ -85,10 +85,6 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 </details>
 
-<details><summary><strong>Bootstrap</strong></summary>
-
-  - `Bootstrap.efi`: Same file as BOOTX64.efi to avoid boot entry override.
-
 </details>
 
 <details><summary><strong>Drivers</strong></summary>
@@ -170,16 +166,26 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 01/06/2021
+### 02/01/2021
 
 - Updated OpenCore to v0.6.5
 - Updated `Lilu` and her friends
-- Set `PickerAttributes` to `25`
-- Set `PickerVariable` to `Modern`
-- Updated `EFI/OC/Resources/Image` to experience modern boot picker icon set (Big Sur style)
-- Deprecated `DeduplicateBootOrder` quirk
+- Replaced `BootProtect` with `LauncherOption` and `LauncherPath`
+- Added new terms and set to default value
+- Removed `Bootstrap.efi`
+- Set `PickerAttributes` to `15` (just because I don't like cursor)
+- Updated some resources
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 01/06/2021
+
+  - Updated OpenCore to v0.6.5
+  - Updated `Lilu` and her friends
+  - Set `PickerAttributes` to `25`
+  - Set `PickerVariable` to `Modern`
+  - Updated `EFI/OC/Resources/Image` to experience modern boot picker icon set (Big Sur style)
+  - Deprecated `DeduplicateBootOrder` quirk
 
   ### 12/12/2020
 
