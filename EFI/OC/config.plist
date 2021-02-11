@@ -434,7 +434,7 @@
 			<key>LauncherPath</key>
 			<string>Default</string>
 			<key>PickerAttributes</key>
-			<integer>15</integer>
+			<integer>9</integer>
 			<key>PickerAudioAssist</key>
 			<false/>
 			<key>PickerMode</key>
