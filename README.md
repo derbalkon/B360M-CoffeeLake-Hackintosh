@@ -166,17 +166,22 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 02/01/2021
+### 02/17/2021
 
-- Updated OpenCore to v0.6.5
-- Updated `Lilu` and her friends
-- Replaced `BootProtect` with `LauncherOption` and `LauncherPath`
-- Added new terms and set to default value
-- Removed `Bootstrap.efi`
-- Set `PickerAttributes` to `15` (just because I don't like cursor)
-- Updated some resources
+- Fixed invalid maskbit in `PickerAttributes`
+- Disabled unnecessary `AllowRelocationBlock`
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 02/01/2021
+
+  - Updated OpenCore to v0.6.5
+  - Updated `Lilu` and her friends
+  - Replaced `BootProtect` with `LauncherOption` and `LauncherPath`
+  - Added new terms and set to default value
+  - Removed `Bootstrap.efi`
+  - Set `PickerAttributes` to `15` (just because I don't like cursor)
+  - Updated some resources
 
   ### 01/06/2021
 
