@@ -1,7 +1,7 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.6-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
-[![MacOS Big Sur](https://img.shields.io/badge/macOS-11.2.1-9cf)](https://www.apple.com/macos/big-sur/)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.7-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![MacOS Big Sur](https://img.shields.io/badge/macOS-11.2.2-9cf)](https://www.apple.com/macos/big-sur/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
 > **Please Note**: This is only a personal build backup, not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
@@ -78,7 +78,7 @@ Things may vary per device and you may want to customize it, which I will **mark
 <details><summary><strong>ACPI</strong></summary>
 
   - `SSDT-AWAC`: Re-enable the old RTC clock that is compatible with macOS.
-  - `SSDT-EC`: Create fake EC device for desktop.
+  - `SSDT-EC-USBX`: Create fake EC device for desktop and fix USB power.
   - `SSDT-PLUG`: Allow the kernel's XCPM (XNU's CPU Power Management) to manage our CPU's power management. Auto detect.
   - `SSDT-PMCR`: Fix NVRAM support for 300 series motherboard.
   - `* SSDT-SBUS-MCHC`: Not necessary. Fix AppleSMBus support.
@@ -106,7 +106,7 @@ Things may vary per device and you may want to customize it, which I will **mark
   - `IntelMausi`: Intel Ethernet LAN driver for macOS.
   - `NVMeFix`: Fix random kernel panic after wake caused by NVMe device.
   - `AirportBrcmFixup`: Fix Wi-Fi lagging after wake.
-  - `* USBPorts`: Custom USB ports mapping and quick charge fix-up for iMac19,2. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:
+  - `* USBPorts`: Custom USB ports mapping for iMac19,2. Ports mapping may vary per device. This kext can be used directly if your USB ports are same as mine:
     
       ```zsh
       1.  HS01 - Internal - BRCM20702 Hub
@@ -166,12 +166,20 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 02/17/2021
+### 03/02/2021
 
-- Fixed invalid maskbit in `PickerAttributes`
-- Disabled unnecessary `AllowRelocationBlock`
+- Updated OpenCore to v0.6.7
+- Updated kexts
+- Replaced SSDTs to acidanthera version
+- Moved Apple quick charge properties from `USBPorts.kext` to `SSDT-EC-USBX.aml`
+- Readded `shikigva 80` to fix Apple TV DRM
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 02/17/2021
+
+  - Fixed invalid maskbit in `PickerAttributes`
+  - Disabled unnecessary `AllowRelocationBlock`
 
   ### 02/01/2021
 
