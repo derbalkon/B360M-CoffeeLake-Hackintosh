@@ -1,7 +1,7 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.7-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
-[![MacOS Big Sur](https://img.shields.io/badge/macOS-11.2.2-9cf)](https://www.apple.com/macos/big-sur/)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.6.8-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![MacOS Big Sur](https://img.shields.io/badge/macOS-11.3-9cf)](https://www.apple.com/macos/big-sur/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
 > **Please Note**: This is only a personal build backup, not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
@@ -166,15 +166,21 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 03/02/2021
+### 05/01/2021
 
-- Updated OpenCore to v0.6.7
+- Updated OpenCore to v0.6.8
 - Updated kexts
-- Replaced SSDTs to acidanthera version
-- Moved Apple quick charge properties from `USBPorts.kext` to `SSDT-EC-USBX.aml`
-- Readded `shikigva 80` to fix Apple TV DRM
+- Added mouse support by setting `PickerAttributes` to `19`
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 03/02/2021
+
+  - Updated OpenCore to v0.6.7
+  - Updated kexts
+  - Replaced SSDTs to acidanthera version
+  - Moved Apple quick charge properties from `USBPorts.kext` to `SSDT-EC-USBX.aml`
+  - Readded `shikigva 80` to fix Apple TV DRM
 
   ### 02/17/2021
 
