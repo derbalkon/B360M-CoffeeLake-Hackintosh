@@ -1,6 +1,6 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.7.0-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.7.1-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
 [![MacOS Big Sur](https://img.shields.io/badge/macOS-11.4-9cf)](https://www.apple.com/macos/big-sur/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
@@ -166,12 +166,17 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 06/08/2021
+  ### 06/08/2021
 
-- Updated OpenCore to v0.7.0
-- Updated kexts and resources
+  - Updated OpenCore to v0.7.1
+  - Updated kexts and resources
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 06/08/2021
+
+  - Updated OpenCore to v0.7.0
+  - Updated kexts and resources
 
   ### 05/04/2021
 
