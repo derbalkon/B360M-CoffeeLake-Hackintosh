@@ -166,12 +166,18 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 08/14/2021
+### 09/08/2021
 
 - Updated OpenCore to v0.7.2
 - Updated kexts and resources
+- Change drivers config style according to the latest manual
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 08/14/2021
+
+  - Updated OpenCore to v0.7.2
+  - Updated kexts and resources
 
   ### 07/06/2021
 

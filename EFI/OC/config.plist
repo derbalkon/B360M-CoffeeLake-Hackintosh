@@ -131,11 +131,6 @@
 				<key>igfxfw</key>
 				<data>AgAAAA==</data>
 		</dict>
-			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
- 			<dict>
- 				<key>shikigva</key>
- 				<integer>80</integer>
- 			</dict>
 		</dict>
 		<key>Delete</key>
 		<dict/>
@@ -528,6 +523,8 @@
 				<string>Enter BIOS firmware settings</string>
 				<key>Enabled</key>
 				<true/>
+				<key>Flavour</key>
+				<string>Auto</string>
 				<key>Name</key>
 				<string>BIOS Settings</string>
 				<key>Path</key>
@@ -696,9 +693,30 @@
 		<true/>
 		<key>Drivers</key>
 		<array>
+			<dict>
+				<key>Path</key>
 			<string>HfsPlus.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
 			<string>OpenRuntime.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
 			<string>OpenCanopy.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
 		</array>
 		<key>Input</key>
 		<dict>
@@ -798,6 +816,8 @@
 			<key>ExitBootServicesDelay</key>
 			<integer>0</integer>
 			<key>ForgeUefiSupport</key>
+			<false/>
+			<key>ForceOcWriteFlash</key>
 			<false/>
 			<key>IgnoreInvalidFlexRatio</key>
 			<false/>
