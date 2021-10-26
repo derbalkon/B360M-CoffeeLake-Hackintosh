@@ -1,12 +1,12 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.7.2-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
-[![MacOS Big Sur](https://img.shields.io/badge/macOS-11.5.2-9cf)](https://www.apple.com/macos/big-sur/)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.7.4-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![MacOS Big Sur](https://img.shields.io/badge/macOS-12.0.1-9cf)](https://www.apple.com/macos/monterey/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
 > **Please Note**: This is only a personal build backup, not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
 
-<img src="Extras/readme-cover.png" align="right" width="400" />
+<img src="Extras/readme-cover.webp" align="right" width="400" />
 
 ## Limitation
 
@@ -166,13 +166,19 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 09/08/2021
+### 10/26/2021
 
-- Updated OpenCore to v0.7.2
-- Updated kexts and resources
-- Change drivers config style according to the latest manual
+- Updated OpenCore to v0.7.4 to satisfy macOS Monterey
+- Updated AppleALC and WhateverGreen
+- Adjust config entries order according to the latest manual
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 09/08/2021
+
+  - Updated OpenCore to v0.7.3
+  - Updated kexts and resources
+  - Change drivers config style according to the latest manual
 
   ### 08/14/2021
 
