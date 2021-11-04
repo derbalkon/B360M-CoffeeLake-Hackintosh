@@ -168,11 +168,17 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ### 10/26/2021
 
-- Updated OpenCore to v0.7.4 to satisfy macOS Monterey
+- Updated OpenCore to v0.7.5
 - Updated AppleALC and WhateverGreen
-- Adjust config entries order according to the latest manual
+- Added kext version information into config.plist
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 10/26/2021
+
+  - Updated OpenCore to v0.7.4 to satisfy macOS Monterey
+  - Updated AppleALC and WhateverGreen
+  - Adjust config entries order according to the latest manual
 
   ### 09/08/2021
 
