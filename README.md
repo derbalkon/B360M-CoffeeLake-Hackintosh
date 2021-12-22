@@ -1,7 +1,7 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.7.4-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
-[![MacOS Big Sur](https://img.shields.io/badge/macOS-12.0.1-9cf)](https://www.apple.com/macos/monterey/)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.7.6-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![MacOS Big Sur](https://img.shields.io/badge/macOS-12.1-9cf)](https://www.apple.com/macos/monterey/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
 > **Please Note**: This is only a personal build backup, not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
@@ -166,13 +166,20 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 10/26/2021
+### 12/22/2021
 
-- Updated OpenCore to v0.7.5
-- Updated AppleALC and WhateverGreen
-- Added kext version information into config.plist
+- Updated OpenCore to v0.7.6
+- Updated Lilu and SMC kexts
+- Added new entries of configuration
+- Adjusted `UIScale` location
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 11/04/2021
+
+  - Updated OpenCore to v0.7.5
+  - Updated AppleALC and WhateverGreen
+  - Added kext version information into config.plist
 
   ### 10/26/2021
 
