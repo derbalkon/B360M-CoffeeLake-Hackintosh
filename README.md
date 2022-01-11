@@ -1,6 +1,6 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.7.6-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.7.7-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
 [![MacOS Big Sur](https://img.shields.io/badge/macOS-12.1-9cf)](https://www.apple.com/macos/monterey/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
@@ -166,14 +166,20 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 12/22/2021
+### 1/11/2022
 
-- Updated OpenCore to v0.7.6
-- Updated Lilu and SMC kexts
-- Added new entries of configuration
-- Adjusted `UIScale` location
+- Updated OpenCore to v0.7.7
+- Updated Lilu, AppleALC and WhateverGreen
+- Adapted new entries to the latest manual
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 12/22/2021
+
+  - Updated OpenCore to v0.7.6
+  - Updated Lilu and SMC kexts
+  - Added new entries of configuration
+  - Adjusted `UIScale` location
 
   ### 11/04/2021
 
