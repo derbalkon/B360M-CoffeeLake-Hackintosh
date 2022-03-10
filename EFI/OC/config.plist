@@ -147,7 +147,7 @@
 				<key>BundlePath</key>
 				<string>Lilu.kext</string>
 				<key>Comment</key>
-                    <string>V1.5.9 | Patch engine</string>
+                <string>V1.6.0 | Patch engine</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -165,7 +165,7 @@
 				<key>BundlePath</key>
 				<string>VirtualSMC.kext</string>
 				<key>Comment</key>
-                    <string>V1.2.8 | SMC emulator</string>
+                <string>V1.2.9 | SMC emulator</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -183,7 +183,7 @@
 				<key>BundlePath</key>
 				<string>SMCProcessor.kext</string>
 				<key>Comment</key>
-                    <string>V1.2.8</string>
+                <string>V1.2.9</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -201,7 +201,7 @@
 				<key>BundlePath</key>
 				<string>SMCSuperIO.kext</string>
 				<key>Comment</key>
-                    <string>V1.2.8</string>
+                <string>V1.2.9</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -219,7 +219,7 @@
 				<key>BundlePath</key>
 				<string>WhateverGreen.kext</string>
 				<key>Comment</key>
-                    <string>V1.5.6</string>
+                <string>V1.5.8</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -237,7 +237,7 @@
 				<key>BundlePath</key>
 				<string>AppleALC.kext</string>
 				<key>Comment</key>
-                    <string>V1.6.8 | Audio patches</string>
+                <string>V1.7.0 | Audio patches</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -309,7 +309,7 @@
 				<key>BundlePath</key>
 				<string>AirportBrcmFixup.kext</string>
 				<key>Comment</key>
-                    <string>V2.1.3 | Fix Wi-Fi lagging after wake</string>
+                <string>V2.1.4 | Fix Wi-Fi lagging after wake</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -472,6 +472,8 @@
 			<integer>0</integer>
 			<key>DisplayLevel</key>
 			<integer>0</integer>
+            <key>LogModules</key>
+            <string></string>
 			<key>SerialInit</key>
 			<false/>
 			<key>SysReport</key>
