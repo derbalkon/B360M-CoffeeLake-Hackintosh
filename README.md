@@ -1,7 +1,7 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.7.7-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
-[![MacOS Big Sur](https://img.shields.io/badge/macOS-12.1-9cf)](https://www.apple.com/macos/monterey/)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.7.9-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![MacOS Big Sur](https://img.shields.io/badge/macOS-12.2.1-9cf)](https://www.apple.com/macos/monterey/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
 > **Please Note**: This is only a personal build backup, not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
@@ -166,13 +166,19 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 1/11/2022
+### 3/10/2022
 
-- Updated OpenCore to v0.7.7
+- Updated OpenCore to v0.7.9
 - Updated Lilu, AppleALC and WhateverGreen
 - Adapted new entries to the latest manual
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 1/11/2022
+
+  - Updated OpenCore to v0.7.7
+  - Updated Lilu, AppleALC and WhateverGreen
+  - Adapted new entries to the latest manual
 
   ### 12/22/2021
 
@@ -240,7 +246,7 @@ Things may vary per device and you may want to customize it, which I will **mark
 
   ### 02/01/2021
 
-  - Updated OpenCore to v0.6.5
+  - Updated OpenCore to v0.6.6
   - Updated `Lilu` and her friends
   - Replaced `BootProtect` with `LauncherOption` and `LauncherPath`
   - Added new terms and set to default value
