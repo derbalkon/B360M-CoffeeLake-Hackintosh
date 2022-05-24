@@ -1,7 +1,7 @@
 # MSI B360M Hackintosh Build & Changelog
 
 [![OpenCore](https://img.shields.io/badge/OpenCore-0.8.0-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
-[![MacOS Big Sur](https://img.shields.io/badge/macOS-12.3.1-9cf)](https://www.apple.com/macos/monterey/)
+[![MacOS Big Sur](https://img.shields.io/badge/macOS-12.4-9cf)](https://www.apple.com/macos/monterey/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
 > **Please Note**: This is only a personal build backup, not a textbook standard guide. If you are looking for a guide please go to **[this page](https://dortania.github.io/getting-started/)** for more informations.
@@ -163,6 +163,13 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 - Yes, Safari 14 breaks DRM patch on both Catalina and Big Sur on `iMac19,1` SMBIOS w/ `shikigva=80`.
 - I'm not sure if `iMacPro1,1` SMBIOS w/ `shikigva=128` will do any better.
+
+### "Apple Music can't play or keeps skipping songs."
+
+- This is also a DRM issue.
+- Try disabling loseless option in Apple Music preference.
+- If this doesn't help, try run `defaults write com.apple.AppleGVA gvaForceAMDKE -boolean yes` in terminal to forces AMD DRM decoder for streaming services.
+- If this still doesn't help, try some other combinations described in Acidanthera's [WhateverGreen Chart](https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.Chart.md#drm-compatibility-on-macos-11).
 
 ## Changelog
 
