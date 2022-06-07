@@ -219,7 +219,7 @@
 				<key>BundlePath</key>
 				<string>WhateverGreen.kext</string>
 				<key>Comment</key>
-                <string>V1.5.8</string>
+                    <string>V1.5.9</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -237,7 +237,7 @@
 				<key>BundlePath</key>
 				<string>AppleALC.kext</string>
 				<key>Comment</key>
-                    <string>V1.7.1 | Audio patches</string>
+                    <string>V1.7.2 | Audio patches</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -309,7 +309,7 @@
 				<key>BundlePath</key>
 				<string>AirportBrcmFixup.kext</string>
 				<key>Comment</key>
-                <string>V2.1.4 | Fix Wi-Fi lagging after wake</string>
+                    <string>V2.1.5 | Fix Wi-Fi lagging after wake</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -487,11 +487,7 @@
 		<array/>
 		<key>Security</key>
 		<dict>
-			<key>AllowNvramReset</key>
-			<true/>
 			<key>AllowSetDefault</key>
-			<true/>
-			<key>AllowToggleSip</key>
 			<true/>
 			<key>ApECID</key>
 			<integer>0</integer>
@@ -743,6 +739,26 @@
 				<key>Path</key>
 				<string>OpenCanopy.efi</string>
 			</dict>
+                <dict>
+                    <key>Arguments</key>
+                    <string></string>
+                    <key>Comment</key>
+                    <string></string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Path</key>
+                    <string>ResetNvramEntry.efi</string>
+                </dict>
+                <dict>
+                    <key>Arguments</key>
+                    <string></string>
+                    <key>Comment</key>
+                    <string></string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Path</key>
+                    <string>ToggleSipEntry.efi</string>
+                </dict>
 		</array>
 		<key>Input</key>
 		<dict>

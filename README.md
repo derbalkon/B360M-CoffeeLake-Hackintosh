@@ -1,6 +1,6 @@
 # MSI B360M Hackintosh Build & Changelog
 
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.0-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.1-f95)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
 [![MacOS Big Sur](https://img.shields.io/badge/macOS-12.4-9cf)](https://www.apple.com/macos/monterey/)
 ![It Works For Me](https://img.shields.io/badge/It%20Works-For%20Me™-green)
 
@@ -173,13 +173,19 @@ Things may vary per device and you may want to customize it, which I will **mark
 
 ## Changelog
 
-### 4/21/2022
+### 6/7/2022
 
-- Updated OpenCore to v0.8.0
-- Updated AppleALC
-- Adapted new entries to the latest manual
+- Updated OpenCore to v0.8.1
+- Updated WhateverGreen, AppleALC, AirportBrcmFixup
+- Switched `Reset NVRAM` and `Toggle SIP` to configurable boot entry protocol drivers according to the latest manual
 
 <details><summary><strong>History changes</strong></summary>
+
+  ### 4/21/2022
+
+  - Updated OpenCore to v0.8.0
+  - Updated AppleALC
+  - Adapted new entries to the latest manual
 
   ### 3/10/2022
 
